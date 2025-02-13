@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Combinator Selectors</title>
+  <style>
+        .container p {
+        color: blue;
+        font-size: 16px;
+        }
+
+        .container > p {
+        color: green;
+        font-size: 18px;
+        }
+        h1 + p {
+        color: red;
+        font-style: italic;
+        }
+
+        h1 ~ p {
+        color: purple;
+        text-decoration: underline;
+        }
+  </style>
+</head>
+<body>
+    <center>
+  <div class="container">
+    <h1>Heading 1</h1>
+    <p>This is a paragraph inside the container.</p>
+    <div>
+      <p>This is another paragraph inside a nested div.</p>
+      <span>This is a span inside the nested div.</span>
+    </div>
+  </div>
+
+  <div>
+    <p>This paragraph is outside the container div.</p>
+  </div>
+
+  <div class="other-container">
+    <p>This is a paragraph inside another container.</p>
+  </div>
+</center>
+</body>
+</html>

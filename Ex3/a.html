@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selector Forms</title>
+  <style>
+        p {
+        color: blue;
+        font-size: 16px;
+        }
+
+        #uniqueElement {
+        background-color: lightgreen;
+        padding: 10px;
+        border-radius: 5px;
+        }
+
+        .highlight {
+        font-weight: bold;
+        color: red;
+        }
+
+        h1, p {
+        font-family: Arial, sans-serif;
+        }
+
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+  </style>
+</head>
+<body>
+    <center>
+  <h1>CSS Selector Example</h1>
+
+  <p>This paragraph is an example of an element selector.</p>
+
+  <div id="uniqueElement">
+    <p>This paragraph has an ID of "uniqueElement".</p>
+  </div>
+
+  <p class="highlight">This paragraph has a class of "highlight".</p>
+  <p class="highlight">This is another paragraph with the same class "highlight".</p>
+
+  <div>
+    <p>This is a normal paragraph inside a div.</p>
+  </div>
+</center>
+</body>
+</html>
