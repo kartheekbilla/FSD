@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pseudo-class Selector</title>
+    <title>Pseudo-class and Pseudo-element Selector</title>
     <style>
         .hover-button {
             background-color: blue;
@@ -12,10 +12,14 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
+            position: relative;
         }
-
         .hover-button:hover {
             background-color: rgb(255, 0, 140);
+        }
+        .hover-button::after {
+            content: " 👋";
+            font-size: 18px;
         }
     </style>
 </head>

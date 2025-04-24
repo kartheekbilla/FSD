@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Styling Levels Example</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+    }
+    .internal-text {
+      color: darkgreen;
+      font-size: 18px;
+    }
+    .external-text {
+      color: navy;
+      background-color: #e6f0ff;
+      padding: 10px;
+      border-left: 4px solid navy;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Styling Formats</h1>
+  <p style="color: red; font-weight: bold;">
+    This paragraph is styled using <strong>inline CSS</strong>.
+  </p>
+  <p class="internal-text">
+    This paragraph uses <strong>internal CSS</strong> defined in the &lt;style&gt; section.
+  </p>
+  <p class="external-text">
+    This paragraph simulates <strong>external CSS</strong> (normally from an external file).
+  </p>
+
+</body>
+</html>

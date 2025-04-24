@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Voter Eligibility</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;}
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 50%;}
+  th, td {
+    border: 1px solid #333;
+    padding: 8px 12px;}
+  th {
+    background-color: #4CAF50;
+    color: white;}
+  button {
+    padding: 10px 15px;
+    font-size: 16px;}
+</style></head>
+<body>
+<h2>Voter Eligibility Check</h2>
+<button onclick="askVoter()">Enter Your Details</button>
+<table id="resultTable" style="display:none;">
+  <thead><tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Can Vote?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td id="nameCell"></td>
+      <td id="ageCell"></td>
+      <td id="voteCell"></td></tr>
+  </tbody>
+</table>
+<script>
+  function askVoter() {
+    const name = prompt("Enter your name:");
+    if (!name) {
+      alert("Name is required.");
+      return;}
+    const ageStr = prompt("Enter your age:");
+    const age = parseInt(ageStr);
+    if (isNaN(age) || age < 0) {
+      alert("Please enter a valid age.");
+      return;}
+    document.getElementById('nameCell').innerText = name;
+    document.getElementById('ageCell').innerText = age;
+    const canVote = age >= 18 ? "Yes" : "No";
+    document.getElementById('voteCell').innerText = canVote;
+    document.getElementById('resultTable').style.display = 'table';}
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Window Object Demo</title>
+  <style>
+    body {font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;}
+    button {padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;}
+    #output {margin-top: 20px;
+      font-size: 18px;
+      color: green;}
+  </style></head>
+<body>
+<h1>Window Object Example</h1>
+<button onclick="showAlert()">Show Alert</button>
+<button onclick="getUserInput()">Get Name & Greet</button>
+<button onclick="showWindowSize()">Show Window Size</button>
+<button onclick="openNewTab()">Open Google in New Tab</button>
+<div id="output"></div>
+<script>
+  function showAlert() {
+    window.alert("This is an alert using the window object!");
+  }
+  function getUserInput() {const name = window.prompt("What's your name?");
+    if (name) {
+      const confirmation = window.confirm("Are you sure your name is " + name + "?");
+      document.getElementById("output").textContent =
+      confirmation ? `Welcome, ${name}!` : "Name confirmation cancelled.";
+    } else {
+      document.getElementById("output").textContent = "No name entered.";}}
+  function showWindowSize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    document.getElementById("output").textContent =
+      `Window size: ${width}px (width) x ${height}px (height)`;}
+  function openNewTab() {
+    window.open("https://www.google.com", "_blank");}
+</script></body>
+</html>

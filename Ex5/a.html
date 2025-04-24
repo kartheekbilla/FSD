@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Internal CSS & External JS Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 30px;
+    }
+    .box {
+      width: 200px;
+      height: 100px;
+      margin: 20px auto;
+      background-color: #3498db;
+      color: white;
+      line-height: 100px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <script src="ascript.js" defer></script>
+</head>
+<body>
+  <h1>Internal CSS & External JS Demo</h1>
+  <div id="box" class="box">Box</div>
+  <button id="btnInternal">Change Color (Internal JS)</button>
+  <button id="btnExternal">Change Color (External JS)</button>
+  <script>
+    document.getElementById('btnInternal').addEventListener('click', function () {
+      const box = document.getElementById('box');
+      box.style.backgroundColor = '#e74c3c'; // red
+      box.textContent = 'Color changed by Internal JS';
+    });
+  </script>
+</body>
+</html>

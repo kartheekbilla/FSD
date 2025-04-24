@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+  <title>RegExp Object Demo</title>
+  <style>
+    body {font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f2f2f2;
+      color: #333;}
+    h2 {color: darkgreen;}
+    ul {font-size: 18px;
+      line-height: 1.6;}
+</style></head>
+<body>
+<h2>JavaScript RegExp Object - Properties and Methods</h2>
+<ul id="regexOutput"></ul>
+<script>
+const output = document.getElementById("regexOutput");
+  const text = "The rain in Spain falls mainly in the plain.";
+  const regex = /ain/g; 
+  const results = [`Original Text: "${text}"`,
+    `RegExp: /ain/g`,
+    `Pattern: "${regex.source}"`,
+    `Global: ${regex.global}`,
+    `Ignore Case: ${regex.ignoreCase}`,
+    `Multiline: ${regex.multiline}`,
+    `Test if "ain" exists: ${regex.test(text)}`,
+    `First Match: "${text.match(regex)}"`,
+    `Replace "ain" with "XYZ": "${text.replace(regex, "XYZ")}"`,
+    `All matches with exec():`];
+  results.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    output.appendChild(li);});
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    const li = document.createElement("li");
+    li.style.color = "blue";
+    li.textContent = `Found '${match[0]}' at index ${match.index}`;
+    output.appendChild(li);}
+</script></body>
+</html>

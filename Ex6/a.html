@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document Object Example</title>
+<style>
+    body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #fff8dc;}
+    #header {color: #2e8b57;
+        font-size: 36px;
+        margin-bottom: 20px;}
+    button {padding: 12px 18px;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 5px;
+        background-color: #4b8bbe;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        transition: background-color 0.3s ease;}
+    button:hover {background-color: #34699a;}
+    #message {margin-top: 25px;
+        font-size: 22px;
+        color: #8b0000;}
+</style></head>
+<body>
+<h1 id="header">Welcome to JS Document Demo!</h1>
+<button id="updateBtn">Update Heading</button>
+<button id="insertParaBtn">Insert Paragraph</button>
+<div id="message"></div>
+<script>
+    document.title = "JavaScript DOM Manipulation Demo";
+    document.body.style.backgroundColor = "#fff8dc";
+    const header = document.getElementById("header");
+    const updateBtn = document.getElementById("updateBtn");
+    const insertParaBtn = document.getElementById("insertParaBtn");
+    const messageDiv = document.getElementById("message");
+    updateBtn.addEventListener("click", function() {
+        header.textContent = "Heading Updated Successfully!";
+        messageDiv.innerHTML = "<strong>Explore DOM properties and methods with ease.</strong>";});
+    insertParaBtn.addEventListener("click", function() {
+        const para = document.createElement("p");
+        para.textContent = "New paragraph added dynamically through JavaScript.";
+        para.style.color = "#006400";
+        para.style.fontSize = "18px";
+        document.body.appendChild(para);});
+    console.log("Current Document URL:", document.URL);
+    console.log("Current Document Title:", document.title);
+</script>
+</body>
+</html>

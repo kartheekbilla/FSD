@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+  <title>Loops Example</title>
+  <style>
+    body {font-family: Arial, sans-serif;
+      padding: 20px;}
+    h2 {color: darkblue;}
+    .output {margin-bottom: 20px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-left: 5px solid #333;}
+</style></head>
+<body>
+  <h2>Printing 1 to 10 Using Different Loops</h2>
+  <div class="output" id="forLoopOutput"></div>
+  <div class="output" id="whileLoopOutput"></div>
+  <div class="output" id="doWhileLoopOutput"></div>
+  <script>
+    let forText = "<strong>For Loop:</strong><br>";
+    for (let i = 1; i <= 10; i++) {
+      forText += i + " ";}
+    document.getElementById("forLoopOutput").innerHTML = forText;
+    let whileText = "<strong>While Loop:</strong><br>";
+    let j = 1;
+    while (j <= 10) {
+      whileText += j + " ";j++;}
+    document.getElementById("whileLoopOutput").innerHTML = whileText;
+    let doWhileText = "<strong>Do-While Loop:</strong><br>";
+    let k = 1;
+    do {doWhileText += k + " ";
+      k++;
+    } while (k <= 10);
+    document.getElementById("doWhileLoopOutput").innerHTML = doWhileText;
+  </script>
+</body>
+</html>

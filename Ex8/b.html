@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Registration Validation</title>
+<style>
+  body {font-family: Arial, sans-serif;
+    margin: 30px;}
+  label, input {display: block;
+    margin: 10px 0 5px 0;}
+  input {padding: 5px;
+    width: 250px;}
+  .error {color: red;
+    font-size: 0.9em;}
+  button {margin-top: 15px;
+    padding: 7px 15px;}
+</style></head>
+<body>
+<h2>Registration Form</h2>
+<form id="regForm" novalidate>
+  <label for="name">Name:</label>
+  <input type="text" id="name" placeholder="Enter your name" />
+  <div class="error" id="nameError"></div>
+  <label for="mobile">Mobile:</label>
+  <input type="text" id="mobile" placeholder="10-digit mobile number" />
+  <div class="error" id="mobileError"></div>
+  <label for="email">Email:</label>
+  <input type="text" id="email" placeholder="example@domain.com" />
+  <div class="error" id="emailError"></div>
+  <button type="submit">Register</button>
+</form>
+<script>
+  document.getElementById('regForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('nameError').textContent = '';
+    document.getElementById('mobileError').textContent = '';
+    document.getElementById('emailError').textContent = '';
+    const name = document.getElementById('name').value.trim();
+    const mobile = document.getElementById('mobile').value.trim();
+    const email = document.getElementById('email').value.trim();
+    let valid = true;
+    const nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+    if (!nameRegex.test(name)) {
+      document.getElementById('nameError').textContent = 'Name must start with a letter and be at least 6 characters.';
+      valid = false;}
+    const mobileRegex = /^[0-9]{10}$/;
+    if (!mobileRegex.test(mobile)) {
+      document.getElementById('mobileError').textContent = 'Mobile number must be exactly 10 digits.';
+      valid = false;}
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      document.getElementById('emailError').textContent = 'Enter a valid email address.';
+      valid = false;}
+    if (valid) {
+      alert('Registration Successful!');
+      this.reset();}});
+</script>
+</body>
+</html>

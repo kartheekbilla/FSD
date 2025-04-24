@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Box Model Simple</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 150px;
+      padding: 15px;
+      border: 3px solid #0066cc;
+      margin: 20px;
+      background-color: #cce5ff;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #003366;
+    }
+
+    .box-2 {
+      width: 300px;
+      height: 150px;
+      padding: 15px;
+      border: 3px solid #cc3300;
+      margin: 20px;
+      background-color: #ffd6cc;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #660000;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Box Model Simple Example</h2>
+  <p>This shows how padding, border, and margin work together.</p>
+
+  <div class="box">
+    Content area with padding and a blue border.
+  </div>
+
+  <div class="box-2">
+    Another box with padding and a red border.
+  </div>
+</body>
+</html>

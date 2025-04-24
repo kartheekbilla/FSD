@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" />
+  <title>Loop Over Object Data</title>
+  <style>
+    body {font-family: Arial, sans-serif;
+      padding: 20px;}
+    .output {margin-bottom: 20px;
+      background: #eef;
+      padding: 10px;
+      border-left: 4px solid #55f;}
+    h2 {color: #225;}
+  </style></head>
+<body>
+  <h2>Looping over object data</h2>
+  <div class="output" id="forInOutput"></div>
+  <div class="output" id="forEachOutput"></div>
+  <div class="output" id="forOfOutput"></div>
+  <script>const person = {
+      name: "Kartheek",
+      age: 19,
+      city: "Amalapuram"};
+    let forInText = "<strong>for-in loop:</strong><br>";
+    for (let key in person) {
+      forInText += `${key} : ${person[key]}<br>`;}
+    document.getElementById("forInOutput").innerHTML = forInText;
+    let forEachText = "<strong>forEach loop:</strong><br>";
+    Object.entries(person).forEach(([key, value]) => {
+      forEachText += `${key} : ${value}<br>`;});
+    document.getElementById("forEachOutput").innerHTML = forEachText;
+    let forOfText = "<strong>for-of loop:</strong><br>";
+    for (let key of Object.keys(person)) {
+      forOfText += `${key} : ${person[key]}<br>`;}
+    document.getElementById("forOfOutput").innerHTML = forOfText;
+</script></body>
+</html>

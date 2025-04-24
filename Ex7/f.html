@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bank Denominations</title>
+<style>
+  body {font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;}
+  input, button {padding: 10px;
+    font-size: 16px;
+    margin: 10px;}
+  #result {margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;}
+</style></head>
+<body>
+<h2>Denomination Breakdown</h2>
+<input type="number" id="amountInput" placeholder="Enter deposited amount" min="1" />
+<button onclick="calculateDenominations()">Calculate</button>
+<div id="result"></div>
+<script>
+  function calculateDenominations() {
+    let amount = parseInt(document.getElementById('amountInput').value);
+    if (isNaN(amount) || amount <= 0) {
+      alert("Please enter a valid positive amount");return;}
+    const denominations = [100, 50, 20, 10, 5, 2, 1];
+    let resultArr = [];
+    for (let denom of denominations) {
+      let count = Math.floor(amount / denom);
+      if (count > 0) {
+        resultArr.push(`${count} - ${denom}'s`);
+        amount = amount % denom;}}
+    document.getElementById('result').textContent = resultArr.join(', ');}
+</script></body>
+</html>

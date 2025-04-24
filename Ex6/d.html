@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+  <title>String Object Demo</title>
+  <style>
+    body {font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;}
+    h2 {color: darkblue;}
+    ul {font-size: 18px;
+      line-height: 1.6;}
+  </style></head>
+<body>
+<h2>JavaScript String Object - Properties and Methods</h2>
+<ul id="stringOutput"></ul>
+<script>
+  const output = document.getElementById("stringOutput");
+  const sample = " Hello, JavaScript World! ";
+  const results = [`Original String: "${sample}"`,
+    `Length: ${sample.length}`,
+    `To Upper Case: "${sample.toUpperCase()}"`,
+    `To Lower Case: "${sample.toLowerCase()}"`,
+    `Trimmed String: "${sample.trim()}"`,
+    `Character at index 7: "${sample.charAt(7)}"`,
+    `Index of "JavaScript": ${sample.indexOf("JavaScript")}`,
+    `Includes "World": ${sample.includes("World")}`,
+    `Slice(1, 10): "${sample.slice(1, 10)}"`,
+    `Replace "World" with "Universe": "${sample.replace("World", "Universe")}"`,
+    `Split by space: ${sample.split(" ")}`,
+    `Starts with " Hello": ${sample.startsWith(" Hello")}`,
+    `Ends with "! ": ${sample.endsWith("! ")}`];
+results.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    output.appendChild(li);});
+</script></body>
+</html>
